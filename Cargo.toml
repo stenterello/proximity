@@ -1,0 +1,17 @@
+[workspace]
+members = [ "server", "voice" ]
+resolver = "2"
+
+[workspace.package]
+authors = ["m0nt4lb4n0"]
+license = "CC-BY-NC-SA-4.0"
+repository = "https://github.com/stenterello/proximity"
+
+[profile.release]
+opt-level = "s"      # Ottimizza per la dimensione (fondamentale per ESP32)
+lto = "thin"         # Link Time Optimization (rende il binario più leggero)
+debug = true         # Mantiene i simboli di debug (utile per i crash)
+
+[profile.dev]
+opt-level = 1        # Un minimo di ottimizzazione anche in debug
+debug = true
